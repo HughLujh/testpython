@@ -25,7 +25,7 @@ pipeline {
 
         steps { 
 
-            dir('testProjectCodes') { 
+            dir('testProject') { 
 
                 echo 'Testing...' 
 
