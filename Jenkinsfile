@@ -19,9 +19,12 @@ pipeline {
                 dir('testProject') { 
 
                     echo 'Testing...' 
-                    def pyFiles = fileTree(dir: '.', include: '**/*.py')
-                    pyFiles.each { pyFile ->
-                        snykSecurity targetFile: pyFile, snykInstallation: 'Snyk Security', snykTokenId: 'd67e5a54-9b89-4c65-b2d6-cd788769dd3a'
+                    script {
+                        // 获取所有.py文件
+                        def pyFiles = fileTree(dir: '.', include: '**/*.py')
+                        pyFiles.each { pyFile ->
+                            snykSecurity targetFile: pyFile, snykInstallation: 'Snyk Security', snykTokenId: 'd67e5a54-9b89-4c65-b2d6-cd788769dd3a'
+                        }
                     }
 
                 } 
