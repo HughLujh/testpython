@@ -32,6 +32,7 @@ pipeline {
 
                 echo 'Testing...' 
                 sh """ls"""
+                sh """python assembler.py"""
                 snykSecurity snykInstallation: 'Snyk Security', snykTokenId: 'd67e5a54-9b89-4c65-b2d6-cd788769dd3a'
             } 
 
