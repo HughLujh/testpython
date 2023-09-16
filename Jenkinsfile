@@ -9,9 +9,7 @@ pipeline {
             steps{ 
 
                 echo "downloading data" 
-
-                git branch: 'main', credentialsId: '5b196ed6-0030-442c-8b30-9f5a5ce97f14', url: 'https://github.cs.adelaide.edu.au/SEP-CD/CD1.git' 
-
+                git branch: 'main', credentialsId: '1', url: 'https://github.com/HughLujh/testpython.git'
             } 
 
         } 
