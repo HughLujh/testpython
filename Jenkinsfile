@@ -5,8 +5,10 @@ pipeline {
         stage('Install Node.js and npm') {
             steps {
                 sh """
-                    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-                    sudo yum install -y nodejs
+                    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+                    export NVM_DIR="$HOME/.nvm"
+                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                    nvm install 14  # Install Node.js 14
                 """
             }
         }
